@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg1bbewcgn82"]
+
+[ext_resource type="Script" path="res://projectiles/bullet.gd" id="1_skmi5"]
+[ext_resource type="Texture2D" uid="uid://dhj1puo01b4wh" path="res://assets/bullet.png" id="2_xr51u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayxu2"]
+radius = 3.0
+height = 18.0
+
+[node name="bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_skmi5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.0879206, 0.0735552)
+texture = ExtResource("2_xr51u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ayxu2")
+debug_color = Color(0.886275, 0.231373, 0.592157, 0.654902)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
