@@ -25,12 +25,9 @@ var attacking: bool = false
 var current_state: state = state.SEEKING
 var damage: int = -1 # set via Stats instance
 var explosion_sfx: Array = [
-	"res://assets/musicSfx/Explosion_v2_variation_01_wav.wav",
-	"res://assets/musicSfx/Explosion_v2_variation_02_wav.wav",
-	"res://assets/musicSfx/Explosion_v2_wav.wav",
-	"res://assets/musicSfx/Explosion_v3_variation_01_wav.wav",
-	"res://assets/musicSfx/Explosion_v3_variation_02_wav.wav",
-	"res://assets/musicSfx/Explosion_v3_wav.wav"
+	"res://assets/musicSfx/monsterDeath.mp3",
+	"res://assets/musicSfx/monsterDeath2.mp3",
+	"res://assets/musicSfx/monsterDeath3.mp3"
 ]
 var splash_damage: int = 1 # TODO: vary by wave
 var can_splash_damage: bool = true

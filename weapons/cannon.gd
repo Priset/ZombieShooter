@@ -9,10 +9,8 @@ extends Node2D
 
 var can_fire: bool = true
 var weapon_sfx: Array = [
-	"res://assets/musicSfx/Laser_Shot_v2_wav.wav",
-	"res://assets/musicSfx/Laser_Shot_v2_variation_01_wav.wav",
-	"res://assets/musicSfx/Laser_Shot_v2_variation_02_wav.wav",
-	"res://assets/musicSfx/Laser_Shot_v2_variation_03_wav.wav"
+	"res://assets/musicSfx/pistolShot.mp3",
+	"res://assets/musicSfx/pistolShot2.mp3"
 ]
 
 func _ready() -> void:

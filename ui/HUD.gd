@@ -8,13 +8,6 @@ extends CanvasLayer
 @onready var wave_label = $WaveLabel
 
 var message_original_position: Vector2
-var gameover_sfx: Array = [
-	"res://assets/musicSfx/gameOver.ogg"
-]
-var finish_game_sfx: Array = [
-	"res://assets/musicSfx/finishGame.mp3"
-]
-
 
 func _ready() -> void:
 	SignalBus.update_score.connect(_on_update_score)

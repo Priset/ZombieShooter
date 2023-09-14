@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c475bkdbqqext"]
 
-[ext_resource type="AudioStream" uid="uid://c5xvt1vs6nnpn" path="res://assets/musicSfx/spaceWhales.ogg" id="1_r2kv5"]
+[ext_resource type="AudioStream" uid="uid://t0xihlgh2bay" path="res://assets/musicSfx/horrorBackground.mp3" id="1_35xa5"]
 
 [node name="BGM" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_r2kv5")
+stream = ExtResource("1_35xa5")
 autoplay = true
