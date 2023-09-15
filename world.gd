@@ -11,11 +11,12 @@ func _ready() -> void:
 
 func _on_try_again() -> void:
 	var players: Array = get_tree().get_nodes_in_group("player")
-	if players.size() == 0:
-		var player: Player = Player.instantiate()
-		player.global_position = player_spawn_point.global_position
-		get_parent().get_node("world/player").add_child(player)
-		
-		var playerCamera: RemoteTransform2D = player.get_node("PlayerCamera")
-		playerCamera.remote_path = world_camera_node_path
+	for player in players:
+		player.queue_free()
+	var player: Player = Player.instantiate()
+	player.global_position = player_spawn_point.global_position
+	get_parent().get_node("world/player").add_child(player)
+	get_tree().change_scene_to_file("res://world.tscn")
+	# Reinicia el juego emitiendo la señal "start_game"
+	SignalBus.emit_signal("start_game")
 

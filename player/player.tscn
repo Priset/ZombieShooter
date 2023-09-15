@@ -4,18 +4,18 @@
 [ext_resource type="Shader" path="res://player/blackColor.gdshader" id="2_xkfg0"]
 [ext_resource type="Texture2D" uid="uid://dhsg81blpidss" path="res://assets/soldier.png" id="3_0dfmb"]
 [ext_resource type="Texture2D" uid="uid://cxaj02b7kmw4j" path="res://assets/light.png" id="3_q5vek"]
-[ext_resource type="PackedScene" uid="uid://bm6effwt4a5pp" path="res://gun_controller.tscn" id="4_d4y0g"]
-[ext_resource type="PackedScene" uid="uid://vpbs6vjemmyl" path="res://stats.tscn" id="5_i4alc"]
+[ext_resource type="PackedScene" uid="uid://bm6effwt4a5pp" path="res://aditionalScenes/gun_controller.tscn" id="5_0xv4e"]
+[ext_resource type="PackedScene" uid="uid://vpbs6vjemmyl" path="res://aditionalScenes/stats.tscn" id="6_2pcnb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_quy2g"]
-size = Vector2(27, 24)
+size = Vector2(26, 23)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mrq82"]
 shader = ExtResource("2_xkfg0")
 shader_parameter/active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7f4r"]
-size = Vector2(29, 26)
+size = Vector2(26, 23)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -26,7 +26,7 @@ script = ExtResource("1_qsbr3")
 MAX_SPEED = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 2)
+position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_quy2g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -42,7 +42,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 2)
+position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_n7f4r")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
@@ -54,9 +54,9 @@ texture_scale = 1.2
 [node name="WeaponMountPoint" type="Marker2D" parent="."]
 position = Vector2(15, 8)
 
-[node name="GunController" parent="." instance=ExtResource("4_d4y0g")]
+[node name="GunController" parent="." instance=ExtResource("5_0xv4e")]
 
-[node name="Stats" parent="." instance=ExtResource("5_i4alc")]
+[node name="Stats" parent="." instance=ExtResource("6_2pcnb")]
 MAX_HP = 10
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

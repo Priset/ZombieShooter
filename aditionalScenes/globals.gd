@@ -4,6 +4,8 @@ var game_version: float = 0.8
 var wave_num: int = 1
 var score: int = 0
 var high_score: int
+var current_bullets: int
+var current_HP: int
 var player_position: Vector2 
 
 var _save = SaveGame.new()

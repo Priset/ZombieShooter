@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce1jr4egm8lvy"]
+[gd_scene load_steps=3 format=3 uid="uid://ce1jr4egm8lvy"]
 
 [ext_resource type="Script" path="res://ui/HUD.gd" id="1_rv2ow"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3d2a"]
+font_size = 80
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_rv2ow")
@@ -78,14 +81,48 @@ layout_mode = 0
 offset_top = 33.0
 offset_right = 40.0
 offset_bottom = 65.0
-text = "250"
+text = "700"
+
+[node name="HpLabel" type="Label" parent="."]
+offset_left = 220.0
+offset_top = -2.0
+offset_right = 306.0
+offset_bottom = 47.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Hp"
+vertical_alignment = 1
+
+[node name="HpNum" type="Label" parent="HpLabel" groups=["save"]]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 33.0
+offset_right = 40.0
+offset_bottom = 65.0
+text = "100"
+
+[node name="MessageGameOver" type="Label" parent="."]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -970.0
+offset_top = 312.0
+offset_right = -410.0
+offset_bottom = 412.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_x3d2a")
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="Message" type="Label" parent="."]
-visible = false
 custom_minimum_size = Vector2(500, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -93,13 +130,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -250.0
-offset_top = -39.0
+offset_top = -40.5
 offset_right = 250.0
-offset_bottom = 39.0
+offset_bottom = 40.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 64
-text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

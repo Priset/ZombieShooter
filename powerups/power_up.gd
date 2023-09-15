@@ -1,7 +1,6 @@
 class_name power_ups
 extends Area2D
 
-
 func _ready() -> void:
 	pass
 	

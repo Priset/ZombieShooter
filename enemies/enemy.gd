@@ -108,6 +108,9 @@ func wave_modifier() -> void:
 func _on_area_2d_body_entered(body) -> void:
 	if "bullet" in body.name:
 		stats.current_HP -= body.damage
+	elif body.is_in_group("player"):
+		body.stats.current_HP -= 5 
+		print("Jugador dañado, salud actual: ", body.stats.current_HP)
 	
 func _on_stats_no_health() -> void:
 	var explosion = Death_Animation.instantiate()
@@ -145,3 +148,4 @@ func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_s
 			can_splash_damage = false
 			await get_tree().create_timer(splash_damage_delay).timeout
 			can_splash_damage = true
+
