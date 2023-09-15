@@ -7,7 +7,6 @@ extends Node2D
 func _ready() -> void:
 	SignalBus.emit_signal("start_game") # from start menu
 	SignalBus.try_again.connect(_on_try_again) # after player death
-	
 	# enable for full screen
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 

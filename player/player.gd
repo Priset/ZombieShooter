@@ -15,7 +15,7 @@ class_name Player
 @onready var shield_effect = $shieldEffect
 
 enum power_up {
-	SHIELD,
+	AMMUNITION,
 	RAPID_FIRE
 }
 
@@ -51,7 +51,7 @@ func _physics_process(delta) -> void:
 	#	gun_controller.secondary_fire()
 
 func apply_power_up(type: power_up, duration: float) -> void:
-	if type == power_up.SHIELD:
+	if type == power_up.AMMUNITION:
 		invincibility = true
 		# allows for multiple shield power-ups
 		

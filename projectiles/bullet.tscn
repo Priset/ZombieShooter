@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dhj1puo01b4wh" path="res://assets/bullet.png" id="2_xr51u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ayxu2"]
-radius = 3.0
-height = 18.0
+radius = 2.0
+height = 14.0
 
 [node name="bullet" type="RigidBody2D"]
 collision_layer = 2

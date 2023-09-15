@@ -10,7 +10,7 @@ script = ExtResource("1_gm3o2")
 position = Vector2(0, -3)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
