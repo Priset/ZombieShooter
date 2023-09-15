@@ -12,11 +12,9 @@ func _ready() -> void:
 	Globals.tween_fade_in(logo, 0.5)
 	start_button.grab_focus()
 	AudioManager.play_sfx(Globals.random_sfx(start_sfx))
-	# create save file, or load it
 	Globals.create_or_load_save()
 	
 func _on_start_button_pressed() -> void:
-	# await results in an instant transition; we want the crossfade effect
 	LevelTransition.fade_from_black()
 	AudioManager.stop_music()
 	get_tree().change_scene_to_file("res://world.tscn")

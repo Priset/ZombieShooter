@@ -16,7 +16,7 @@ func _ready() -> void:
 	SignalBus.try_again.connect(_on_start_game)
 	
 	message_original_position = message.global_position
-	update_high_score(Globals.high_score) # from save game
+	update_high_score(Globals.high_score)
 	
 func show_message(text: String, fade_out: bool = true) -> void:
 	message.global_position = message_original_position
@@ -35,12 +35,9 @@ func _on_update_score(points) -> void:
 	if Globals.score % 10 == 0:
 		Globals.tween_pulsate(score_num)
 	
-	# TODO: Display this in a message queue bottom left corner of screen
-	# include combos and other modifier info
 	if Globals.score > Globals.high_score:
 		update_high_score(Globals.score)
 
-# also called when loading saved games
 func update_high_score(points) -> void:
 	Globals.high_score = points
 	high_score_num.text = str(Globals.high_score)
@@ -57,13 +54,7 @@ func _on_try_again_button_pressed() -> void:
 	SignalBus.emit_signal("try_again")
 	
 func _on_start_game() -> void:
-	# wave updated in spawners.gd
 	Globals.score = 0
 	SignalBus.emit_signal("update_score", 0)
 	show_message("Get Ready")
 
-# Using Globals.player_position instead
-#func _get_viewport_center() -> Vector2:
-#	var viewport: Vector2 = DisplayServer.window_get_size()
-#	print(viewport)
-#	return Vector2(viewport.x/2, viewport.y/2)

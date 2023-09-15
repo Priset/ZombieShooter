@@ -14,7 +14,6 @@ func write_save_game() -> void:
 		printerr("Could not open save game %s. Aborting save operation. Error code: %s" % [SAVE_GAME_PATH, FileAccess.get_open_error()])
 		return
 	
-	# TODO: just pass Globals here?
 	var data: Dictionary = {
 		"game_version": Globals.game_version,
 		"high_score": Globals.high_score
@@ -39,9 +38,6 @@ func load_save_game() -> void:
 		
 		if typeof(data) == TYPE_DICTIONARY:
 			print("save data, ", data)
-
-			# TODO: Feels like there's a better way to handle this
-			# especially as there's more [complex] data to load...
 			Globals.high_score = data.high_score
 		else:
 			printerr("Unexpected data from save game, %" % data)

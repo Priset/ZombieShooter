@@ -22,14 +22,11 @@ func fire() -> void:
 		bullet.position = muzzle.global_position
 		bullet.rotation_degrees = global_rotation_degrees
 		bullet.transform = muzzle.global_transform
-		# apply gravity and rotate vector to the player's rotation
 		bullet.linear_velocity = Vector2(BULLET_SPEED, 0).rotated(global_rotation)
 		get_tree().get_root().call_deferred("add_child", bullet)
 		AudioManager.play_sfx(Globals.random_sfx(weapon_sfx))
 		can_fire = false
 		timer.start()
-
-# TODO: Add secondary_fire()
 
 func _on_timer_timeout() -> void:
 	can_fire = true

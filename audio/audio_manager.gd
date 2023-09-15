@@ -10,13 +10,10 @@ func _ready() -> void:
 	
 	bgm.stream_paused = true
 	
-# change music in the game in menu, boss fight, etc.
 func play_music(music) -> void:
 	bgm.stream = music
 	bgm.play()
 	
-# play sfx
-# the # of effect_player_{n} allows multiple sfx to be played at the same time
 func play_sfx(clip) -> void:
 	var n: int = effect_player.get_child_count()
 	

@@ -32,11 +32,11 @@ func _ready() -> void:
 
 func start_next_wave() -> void:
 	enemies_killed_this_wave = 0
-	current_wave_index += 1 # advance the index
+	current_wave_index += 1 
 	power_ups_spawned_this_wave = 0
 
 	if current_wave_index < all_waves.size():
-		Globals.wave_num = current_wave_index+1 # visual display
+		Globals.wave_num = current_wave_index+1 
 		SignalBus.emit_signal("update_wave", Globals.wave_num)
 		
 		current_wave = all_waves[current_wave_index]
@@ -45,7 +45,7 @@ func start_next_wave() -> void:
 		timer.wait_time = current_wave.SEC_BETWEEN_SPAWNS
 		timer.start()
 		
-		if current_wave_index > 0: # don't need power-ups on first wave
+		if current_wave_index > 0: 
 			power_up_spawn_timer.wait_time = pick_power_up_spawn_time(current_wave)
 			power_up_spawn_timer.start()
 	else:
@@ -57,14 +57,10 @@ func connect_to_enemy_signals(enemy: Enemy) -> void:
 	
 func spawn() -> void:
 	var spawn_point: int = pick_spawn_point()
-	
 	var enemy: Enemy = ENEMY.instantiate()
 	connect_to_enemy_signals(enemy)
 	
-	# add enemy to random spawn point
 	enemy.global_position = all_spawn_points[spawn_point].global_position
-#	var enemy_root = get_parent().find_child("enemies")
-#	enemy_root.add_child(enemy)
 	get_parent().add_child(enemy)
 	enemies_remaining_to_spawn -= 1
 
