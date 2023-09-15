@@ -17,8 +17,8 @@ config/icon="res://ui/icon.svg"
 
 [autoload]
 
-SignalBus="*res://SignalBus.gd"
-Globals="*res://globals.gd"
+SignalBus="*res://aditionalScenes/SignalBus.gd"
+Globals="*res://aditionalScenes/globals.gd"
 AudioManager="*res://audio/audio_manager.tscn"
 LevelTransition="*res://ui/level_transition.tscn"
 

@@ -8,7 +8,7 @@ func _ready() -> void:
 	SignalBus.emit_signal("start_game") # from start menu
 	SignalBus.try_again.connect(_on_try_again) # after player death
 	# enable for full screen
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_try_again() -> void:
 	var players: Array = get_tree().get_nodes_in_group("player")
